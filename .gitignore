@@ -1,0 +1,6 @@
+db.sqlite3
+.idea
+env
+.env
+.DS_Store
+*.pyc
