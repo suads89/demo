@@ -1,0 +1,13 @@
+{% load static %}
+<html>
+<head>
+    <link href="{% static "blog/css/style.css" %}" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <label > Content : {{ post.content }}</label> <br/>
+    <label > Publish Date : {{ post.pub_date }}</label><br/>
+    <label > Is Published : {{ post.is_published }}</label><br/><br/>
+<a href="{% url 'blog:index' %}">Back to Posts again</a>
+</body>
+</html>

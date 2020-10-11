@@ -1,0 +1,16 @@
+{% load static %}
+<html>
+    <head>
+        <link href="{% static "polls/css/style.css" %}" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Add New Question</h1>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <form action="{% url 'polls:save'%}" method="post">
+        {% csrf_token %}
+            <p>Question: <input type="text" name="qName" id="qName" required="yes" size="70" ></p>
+            <p><input type="submit" value="Save"></p>
+        </form>
+    </body>
+</html>
+

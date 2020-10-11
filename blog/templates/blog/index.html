@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+    <head>
+        <link href="{% static "blog/css/style.css" %}" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <img src="{% static "blog/img/flower.jpg" %}" width="600" height="200" >
+        <h1>Posts: </h1>
+        {% if latest_post_list %}
+            <ul>
+                {% for post in latest_post_list %}
+                    <li><a href="/blog/{{ post.id }}/">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+            <br/>
+        {% else %}
+            <p>No posts are available.</p>
+        {% endif %}
+    </body>
+</html>
