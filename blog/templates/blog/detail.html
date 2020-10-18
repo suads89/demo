@@ -1,13 +1,42 @@
 {% load static %}
-<html>
-<head>
-    <link href="{% static "blog/css/style.css" %}" type="text/css" rel="stylesheet">
-</head>
-<body>
-    <h1>{{ post.title }}</h1>
-    <label > Content : {{ post.content }}</label> <br/>
-    <label > Publish Date : {{ post.pub_date }}</label><br/>
-    <label > Is Published : {{ post.is_published }}</label><br/><br/>
-<a href="{% url 'blog:index' %}">Back to Posts again</a>
-</body>
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+       <link href="{% static "blog/css/style.css" %}" type="text/css" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container">
+  <div class="row">
+  <div class="col">
+<br>
+       <img src="{% static "blog/img/flower.jpg" %}" width="1000" height="200" style="margin-bottom: 20px">
+
+       <div class="card" style="width: 30rem; background-color: aliceblue">
+        <div class="card-body">
+
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.content }}</p>
+            <br>
+            <p class="card-text"><small class="text-muted">Puplish Date: {{ post.pub_date }}</small></p>
+            <p class="card-text"><small class="text-muted">Is Published: {{ post.is_published }}</small></p>
+           </div>
+        </div>
+
+     <a href="{% url 'blog:index' %}">Back to Posts again</a>
+  </div>
+  </div>
+    </div>
+  </body>
 </html>
