@@ -5,6 +5,19 @@ from django.http import HttpResponse
 from django.views import generic
 from .models import Post
 
+from rest_framework import viewsets
+from rest_framework import permissions
+from .serializers import PostSerializer
+
+
+class PostViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows questions to be viewed or edited.
+    """
+    queryset = Post.objects.filter(is_published=True)
+    serializer_class = PostSerializer
+    permission_classes = [permissions.AllowAny]
+
 
 def index(request):
     return HttpResponse("Hello, world. You're at the blog index.")
